@@ -6,17 +6,16 @@
 
 <BODY>
     <?php
-    $num = "127";
+    $num = "168";
     $valor_decimal = "";
 
-    while ($num / 2 != 1 && $num > 0) {
+    while ($num / 2 > 0) {
+        $valor_decimal .= (int)($num % 2);
         $num = $num / 2;
-        $num = (int)$num;
-        $valor_decimal .= $num % 2;
+        $num = (int)($num);
     }
 
-    printf("1" . strrev($valor_decimal));
-
+    printf(strrev($valor_decimal));
     ?>
 </BODY>
 
