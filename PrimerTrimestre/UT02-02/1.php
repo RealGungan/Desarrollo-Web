@@ -7,14 +7,21 @@
 <BODY>
     <?php
     $num = "168";
+    //variable para almacenar el valor decimal y luego darle la vuelta
     $valor_decimal = "";
 
+    //mientras el resultado de la division sea mayor que cero,
+    //el bucle seguirá funcionando
     while ($num / 2 > 0) {
+        //almacenamos el resto de la división en la variable
         $valor_decimal .= (int)($num % 2);
+        //dividimos el número por dos
         $num = $num / 2;
+        //el resultado de la división lo convertimos en entero
         $num = (int)($num);
     }
 
+    //imprimimos el resultado dado la vuelta
     printf(strrev($valor_decimal));
     ?>
 </BODY>
