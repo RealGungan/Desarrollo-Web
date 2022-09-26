@@ -18,7 +18,8 @@
     //mientras el contador sea menor o igual que diez, el bucle seguirá funcionando
     while ($cont <= 10) {
         //creamos las etiquetas "tr" y "td" dándole estilo al "td"
-        printf("<tr><td style=\"border:1px solid black; width: 4rem\">");
+        printf("<tr><td style=\"border:1px solid black; 
+        \">");
         //imprimimos la variable "num" seguido se una "x" y el valor del contador
         printf($num . " x " . $cont);
         //creamos la etiqueta "td" dándole estilo

@@ -17,7 +17,7 @@
 
     //si el número es 0, el resultado es 0
     if ($num == 0) {
-        $valor_decimal = "0";
+        $valor_hex = "0";
     } else {
         //mientras la división del número por la base sea mayor que cero
         //el bucle seguirá funcionando
@@ -43,7 +43,7 @@
     }
 
     //imprimimos el resultado dado la vuelta
-    if ($valor_decimal != 0) {
+    if ($valor_hex != 0) {
         printf(strrev($valor_hex));
     }
     ?>
