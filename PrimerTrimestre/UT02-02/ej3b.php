@@ -6,7 +6,7 @@
 
 <BODY>
     <?php
-    $num = "12132123";
+    $num = "1234567";
     $base = "16";
     //variable para almacenar el valor del número en hexadecimal
     $valor_hex = "";
