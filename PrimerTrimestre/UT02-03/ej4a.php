@@ -15,10 +15,15 @@
     printf("<th style=\"border:1px solid black; border-collapse: collapse; width: 4rem\">Binario</th>");
     printf("<th style=\"border:1px solid black; border-collapse: collapse; width: 4rem\">Octal</th></tr>");
 
+    for ($i = 0; $i < 20; $i++) {
+        $arr[$i] = decbin($i);
+    }
+
+    $arr = array_reverse($arr);
 
     for ($i = 0; $i < 20; $i++) {
         printf("<tr style=\"border:1px solid black; border-collapse: collapse; width: 4rem;\"><td> " . $i . "</td>");
-        printf("<td style=\"border:1px solid black;\"> " . strrev($arr[$i] = decbin($i)) . "</td>");
+        printf("<td style=\"border:1px solid black;\"> " . $arr[$i] . "</td>");
         printf("<td style=\"border:1px solid black;\"> " . decoct($i) . "</td></tr>");
     }
 

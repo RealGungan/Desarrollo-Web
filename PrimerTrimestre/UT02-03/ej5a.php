@@ -12,9 +12,10 @@
 
     printf("Array sin función <br>");
     $arr_sin = [];
-    foreach ($arrays as  $key => $array) {
-        foreach ($array as $finalArray) {
-            $arr_sin[] = $finalArray;
+    $count_array = array($arr_1, $arr_2, $arr_3);
+    for ($i = 0; $i < count($count_array); $i++) {
+        for ($j = 0; $j < count($count_array[$i]); $j++) {
+            $arr_sin[] = $count_array[$i][$j];
         }
     }
     print_r($arr_sin);
@@ -26,10 +27,14 @@
     printf("<br><br>");
 
     printf("Array función push <br>");
-    $arr_push = array_push($arr_1, $arr_2, $arr_3);
+    $arr_push = [];
+    for ($i = 0; $i < count($count_array); $i++) {
+        for ($j = 0; $j < count($count_array[$i]); $j++) {
+            array_push($arr_push, $count_array[$i][$j]);
+        }
+    }
     print_r($arr_push);
 
-    function array_merge
     ?>
 </BODY>
 
