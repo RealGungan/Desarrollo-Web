@@ -36,6 +36,8 @@
             printf("(" . $j . "," . $i . ") = " . $arr_2d[$j][$i] . "<br>");
         }
     }
+
+    print_r($arr_2d);
     ?>
 </BODY>
 

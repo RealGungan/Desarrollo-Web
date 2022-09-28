@@ -21,12 +21,10 @@
     for ($i = 0; $i < $x; $i++) {
         $arr = [];
         for ($j = 0; $j < $y; $j++) {
-            $arr[] = $i + $j;
+            printf("(" . $j . "," . $i . ") = " . $arr[] = $i + $j . "<br>");
         }
         $arr_2d[] = $arr;
     }
-
-    print_r($arr_2d);
     ?>
 </BODY>
 
