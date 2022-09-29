@@ -25,18 +25,14 @@
 
 <BODY>
     <?php
-    $arr_2d = [];
-    $matriz1 = [];
-    $matriz2 = [];
-
     printf("<div>");
-    $matriz1[] = createArray($arr_2d);
-    $matriz2[] = createArray($arr_2d);
+    $matriz1[] = createArray();
+    $matriz2[] = createArray();
     printf("</div>");
 
     sumArrs($matriz1, $matriz2);
 
-    function createArray($arr_2d)
+    function createArray()
     {
         printf("<div>");
         printf("<table>");
@@ -45,7 +41,9 @@
             $arr_rows = [];
             printf("<tr>");
             for ($j = 0; $j < 3; $j++) {
-                printf("<td>" . rand(1, 10) . "</td>");
+                $rand = rand(1, 10);
+                $arr_rows[] = $rand;
+                printf("<td>" . $rand . "</td>");
             }
             printf("</tr>");
             $arr_2d[] = $arr_rows;
