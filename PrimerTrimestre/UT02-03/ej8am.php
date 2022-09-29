@@ -34,6 +34,8 @@
 
     function createArray()
     {
+        $arr_2d = [];
+
         printf("<div>");
         printf("<table>");
 
