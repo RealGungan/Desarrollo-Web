@@ -34,6 +34,10 @@
 
     studentHighest($arr_2d, $arr_names, $arr_subjects);
 
+    allStudentSubjectAverage($arr_2d, $arr_names, $arr_subjects);
+
+    studentSubjectAverage($arr_2d, $arr_names, $arr_subjects);
+
     //función para crear el array
     function buildArray($x, $y, $arr_names)
     {
@@ -141,22 +145,37 @@
             . $highest . " en " . $nombre);
     }
 
-    //funcnión mayor nota alumno en una asignatura
-    function studentHighest($arr_2d, $arr_names, $arr_subjects)
+    //funcnión nota media asignaturas alumnos
+    function allStudentSubjectAverage($arr_2d, $arr_names, $arr_subjects)
     {
-        $student = 5;
-        $highest = 0;
         $nombre = "";
 
-        for ($i = 0; $i <= count($arr_subjects); $i++) {
-            if ($arr_2d[$student][$i] > $highest && $i != 0) {
-                $highest = $arr_2d[$student][$i];
-                $nombre = $arr_subjects[$i - 1];
+        printf("<br>");
+        for ($i = 0; $i < count($arr_subjects); $i++) {
+            $average = 0;
+            printf("<br>" . "La nota media de " . $arr_subjects[$i]);
+            for ($j = 0; $j < count($arr_2d); $j++) {
+                if ($arr_2d[$j][$i] != $arr_names[$j]) $average += $arr_2d[$j][$i + 1] / count($arr_names);
+                else $average += $arr_2d[$j][$i + 1] / count($arr_names);
             }
+            printf(" " . $average);
         }
+    }
 
-        printf("<br><br>La nota más alta de " . $arr_names[$student] . " es un "
-            . $highest . " en " . $nombre);
+    //funcnión nota media alumno
+    function studentSubjectAverage($arr_2d, $arr_names, $arr_subjects)
+    {
+        $nombre = "";
+
+        printf("<br>");
+        for ($i = 0; $i < count($arr_subjects); $i++) {
+            $average = 0;
+            printf("<br>" . "La nota media de " . $arr_names[$i] . " es ");
+            for ($j = 0; $j <= count($arr_subjects); $j++) {
+                $average += (int)$arr_2d[$i][$j];
+            }
+            printf(" " . $average / count($arr_subjects));
+        }
     }
     ?>
 </BODY>
