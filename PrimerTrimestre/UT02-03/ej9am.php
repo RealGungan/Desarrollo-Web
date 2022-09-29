@@ -26,11 +26,10 @@
 <BODY>
     <?php
     printf("<div>");
-    $matriz1 = createArray();
-    $matriz2 = createArray();
+    $matriz = createArray();
     printf("</div>");
 
-    sumArrs($matriz1, $matriz2);
+    transposeArray($matriz);
 
     //función para generar arrays
     function createArray()
@@ -43,7 +42,7 @@
         for ($i = 0; $i < 3; $i++) {
             $arr_rows = [];
             printf("<tr>");
-            for ($j = 0; $j < 3; $j++) {
+            for ($j = 0; $j < 4; $j++) {
                 $rand = rand(1, 10);
                 $arr_rows[] = $rand;
                 printf("<td>" . $rand . "</td>");
@@ -58,17 +57,17 @@
         return $arr_2d;
     }
 
-    //función para sumar arrays
-    function sumArrays($matriz1, $matriz2)
+    //función para hacerla traspuesta
+    function transposeArray($matriz)
     {
         printf("<div>");
         printf("<table>");
 
-        for ($i = 0; $i < 3; $i++) {
+        for ($i = 0; $i < count($matriz) + 1; $i++) {
             $arr_rows = [];
             printf("<tr>");
-            for ($j = 0; $j < 3; $j++) {
-                printf("<td>" . (int)($matriz1[$i][$j] + $matriz2[$i][$j]) . "</td>");
+            for ($j = 0; $j < count($matriz); $j++) {
+                printf("<td>" . $matriz[$j][$i] . "</td>");
             }
             printf("</tr>");
             $arr_2d[] = $arr_rows;
