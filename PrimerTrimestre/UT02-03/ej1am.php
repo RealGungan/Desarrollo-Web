@@ -18,13 +18,13 @@
     $max = 3;
     $count = 0;
 
-    printf("<table>");
 
     for ($i = 0; $i < $max; $i++) {
         $arr_rows = [];
         printf("<tr>");
         for ($j = 0; $j < $max; $j++) {
             $count += 2;
+            printf("<td>" . $count . "</td>");
             $arr_rows[] = $count;
             printf("<td>" . $count . "</td>");
         }
