@@ -30,7 +30,7 @@
     $matriz2 = createArray();
     printf("</div>");
 
-    sumArrs($matriz1, $matriz2);
+    sumArrays($matriz1, $matriz2);
 
     //función para generar arrays
     function createArray()
