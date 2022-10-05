@@ -25,17 +25,18 @@
 
 <BODY>
     <?php
+    $ganador = false;
     printf("<div>");
-    createCarton();
+    $carton1 = createCarton();
+    $carton2 = createCarton();
+    $carton3 = createCarton();
     printf("</div>");
 
-    printf("<div>");
-    createCarton();
-    printf("</div>");
-
-    printf("<div>");
-    createCarton();
-    printf("</div>");
+    while (!$ganador) {
+        printf("<div>");
+        generarBolas($carton1, $carton2, $carton3);
+        printf("</div>");
+    }
 
     //función para generar arrays
     function createCarton()
@@ -94,6 +95,44 @@
 
         return $arr_2d;
     }
+
+    //FUNCION GENERAR BOLAS-------------------------------------------------------------------------
+
+
+    function generarBolas($carton1, $carton2, $carton3)
+    {
+        $arrayBolas = array();
+        $valorRandomPrimero = mt_rand(0, 60);
+        array_push($arrayBolas, $valorRandomPrimero);
+        $x = 1;
+        while ($x <= 60) {
+            $siguienteValorRadom = mt_rand(0, 60);
+            if (in_array($siguienteValorRadom, $arrayBolas)) {
+                continue;
+            } else {
+                array_push($arrayBolas, $siguienteValorRadom);
+                $x++;
+            }
+        }
+        $bola = array_pop($arrayBolas);
+        echo "Ha salido la bola :" . $bola;
+
+        comrpobar($bola, $carton1, $carton2, $carton3);
+    }
+
+    // comprobar cartón
+    function comrpobar($bola, $carton1, $carton2, $carton3)
+    {
+        for ($i = 0; $i < 3; $i++) {
+            for ($j = 0; $j < 7; $j++) {
+                if ($bola == $carton1[$i][$j]) {
+                    $carton1[$i][$j] = true;
+                }
+            }
+        }
+    }
+
+
     ?>
 </BODY>
 
