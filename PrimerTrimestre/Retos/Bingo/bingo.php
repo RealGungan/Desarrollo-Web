@@ -52,7 +52,8 @@
                 $vacio = rand(1, 10);
                 if ($vacio % 2 == 0 || $vacio_count == 6) {
                     $numero = $numeros[rand(1, 60)];
-                    $arr_rows[] = $numero;
+                    $numero =
+                        $arr_rows[] = $numero;
                     printf("<td>" . $numero . "</td>");
                 } else {
                     $arr_rows[] = "";
