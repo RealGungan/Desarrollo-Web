@@ -35,6 +35,7 @@
         $arr_2d = [];
         $numeros = [];
         $vacio = 0;
+        $vacio_count = 0;
 
         printf("<div>");
         printf("<table>");
@@ -48,15 +49,15 @@
             $arr_rows = [];
             printf("<tr>");
             for ($j = 0; $j < 7; $j++) {
-                $count = rand(1, 10);
-                if ($vacio % 2 == 0 && $count < 6 || $vacio == 6) {
+                $vacio = rand(1, 10);
+                if ($vacio % 2 == 0 || $vacio_count == 6) {
                     $numero = $numeros[rand(1, 60)];
                     $arr_rows[] = $numero;
                     printf("<td>" . $numero . "</td>");
-                    $count++;
-                    $vacio++;
                 } else {
-                    $arr_rows[] = " ";
+                    $arr_rows[] = "";
+                    printf("<td style =\"background: red;\"></td>");
+                    $vacio_count++;
                 }
             }
             printf("</tr>");
