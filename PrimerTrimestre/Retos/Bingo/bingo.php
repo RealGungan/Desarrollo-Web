@@ -45,6 +45,7 @@
         $numeros_rellenar = [];
         $numeros_rellenar_count = 0;
         $numeros_no_validos = [];
+        $rand = 0;
         $vacio = 0;
         $vacio_count = 0;
 
@@ -61,13 +62,23 @@
         for ($i = 0; $i < 3; $i++) {
             $arr_rows = [];
             printf("<tr>");
+            unset($numeros_no_validos);
+            $numeros_no_validos = [];
+            $numeros_rellenar = $numeros_bolsa;
             for ($j = 0; $j < 7; $j++) {
                 $vacio = rand(1, 10);
                 if ($vacio % 2 == 0 || $vacio_count == 6) {
                     $numeros_rellenar_count++;
-                    $numero = $numeros_rellenar[rand(1, 60 - $numeros_rellenar_count)];
-                    array_splice($numeros_rellenar, array_search($numero, $numeros_rellenar), 1);
+                    $rand = rand(1, 60 - $numeros_rellenar_count);
+                    while (array_search($rand, $numeros_no_validos)) {
+                        $rand = rand(1, 60 - $numeros_rellenar_count);
+                    }
+                    $numero = $numeros_rellenar[array_search($rand, $numeros_rellenar)];
+                    unset($numeros_rellenar[array_search($numero, $numeros_rellenar)]);
+                    $numeros_rellenar = array_values($numeros_rellenar);
+                    $numeros_no_validos[] = $numero;
                     printf("<td>" . $numero . "</td>");
+                    $arr_rows[] = $numero;
                 } else {
                     $arr_rows[] = "";
                     printf("<td></td>");
