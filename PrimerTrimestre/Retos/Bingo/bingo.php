@@ -29,11 +29,22 @@
     createCarton();
     printf("</div>");
 
+    printf("<div>");
+    createCarton();
+    printf("</div>");
+
+    printf("<div>");
+    createCarton();
+    printf("</div>");
+
     //función para generar arrays
     function createCarton()
     {
         $arr_2d = [];
-        $numeros = [];
+        $numeros_bolsa = [];
+        $numeros_rellenar = [];
+        $numeros_rellenar_count = 0;
+        $numeros_no_validos = [];
         $vacio = 0;
         $vacio_count = 0;
 
@@ -42,8 +53,10 @@
 
         //generar números
         for ($i = 1; $i <= 60; $i++) {
-            $numeros[$i] = $i;
+            $numeros_bolsa[$i] = $i;
         }
+
+        $numeros_rellenar = $numeros_bolsa;
 
         for ($i = 0; $i < 3; $i++) {
             $arr_rows = [];
@@ -51,13 +64,13 @@
             for ($j = 0; $j < 7; $j++) {
                 $vacio = rand(1, 10);
                 if ($vacio % 2 == 0 || $vacio_count == 6) {
-                    $numero = $numeros[rand(1, 60)];
-                    $numero =
-                        $arr_rows[] = $numero;
+                    $numeros_rellenar_count++;
+                    $numero = $numeros_rellenar[rand(1, 60 - $numeros_rellenar_count)];
+                    array_splice($numeros_rellenar, array_search($numero, $numeros_rellenar), 1);
                     printf("<td>" . $numero . "</td>");
                 } else {
                     $arr_rows[] = "";
-                    printf("<td style =\"background: red;\"></td>");
+                    printf("<td></td>");
                     $vacio_count++;
                 }
             }
