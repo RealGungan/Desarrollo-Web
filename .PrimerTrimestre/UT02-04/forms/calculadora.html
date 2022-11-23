@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <title> </title>
+    <meta charset="utf-8" />
+    <meta name="author" content="tu nombre" />
+    <link href=".css" rel="stylesheet" type="text/css" />
+    <script src="" type="text/javascript">
+
+    </script>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calculadora</h1>
+    <form name="form" method="get" action="calculadora.php">
+        Operando1: <input type="text" name="val1">
+        <br><br>
+        Operando2: <input type="text" name="val2">
+        <br><br>
+        Selecciona la operación
+        <br>
+        <input type="radio" name="operation" value="sum"> Suma
+        <br>
+        <input type="radio" name="operation" value="res"> Resta
+        <br>
+        <input type="radio" name="operation" value="mul"> Producto
+        <br>
+        <input type="radio" name="operation" value="div"> División
+        <br>
+        <input type="submit" name="submit" value="Submit">
+        <input type="reset" name="reset" value="Clear">
+    </form>
+</body>
+
+</html>
