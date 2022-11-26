@@ -148,12 +148,12 @@ function getHigger($res)
     }
 
     if (!empty($higher)) {
-
         foreach ($higher as $player => $punt) {
             $money = $bote * .5 / count($higher);
             printHigher($player, $punt, $money);
         }
 
+        echo '<br> money: ' . $money;
         giveHigher($res, $higher_money, $money);
     }
 }
